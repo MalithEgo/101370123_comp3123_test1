@@ -3,9 +3,8 @@ const path = require("path");
 
 const directory = "test";
 const dir = "/multiple";
-const content = "writing something in file";
+const content = "writing on the file";
 
-// Read and remove log file
 const readFile = () => {
   fs.readdir(directory, (err, files) => {
     if (err) throw err;
@@ -26,16 +25,3 @@ const createDir = (dir) => {
     });
   }
 };
-
-// create file
-const writeFile = () => {
-  var files = "";
-  for (let i = 0; i < 10; i++) {
-    files[i] = fs.writeFileSync(`./multiple/toy${i}.txt`, "write a phrase");
-    console.log(`creating files ... toy${i}.txt`);
-  }
-}
-
-readFile();
-createDir(dir);
-writeFile();
